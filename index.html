@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="images/favicon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/_style.css?6998">
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <title>Make Inus Great Again</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-xxl-8 col-2k-6 mt-3 mt-lg-0">
+                <div id="main" class="d-flex py-4 px-xl-4 justify-content-center align-items-center">
+                    <div class="position-relative d-flex flex-column justify-content-center align-items-center">
+                        <div class="position-relative d-flex flex-column align-items-center">
+                            <a id="launch-button" class="d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#launch-modal">
+									<img src="images/launch-2.png" /> <span class="mx-2">|</span> BUY NOW
+								</a>
+
+                            <img id="bg" width="100%" class="d-block" src="images/bg.jpg" />
+
+                            <img id="anim-1" class="animated" height="14%" src="images/a1n.png" />
+                            <img id="anim-2" class="animated" height="14%" src="images/a2.png" />
+                            <img id="anim-3" class="animated" height="23%" src="images/a3n.png" />
+                        </div>
+
+                        <div class="d-flex flex-wrap justify-content-center text-center mt-2 mt-2k-3">
+                            <a class="social-link mx-4 my-1" href="https://t.me/" target="_blank">
+									<img class="me-1" src="images/telegram.png">
+									telegram
+								</a>
+                            <a class="social-link mx-4 my-1" href="https://etherscan.io/token/" target="_blank">
+									<img class="me-1" src="images/eth.png">
+									ethscan
+								</a>
+                            <a class="social-link mx-4 my-1" href="https://www.dextools.io/app/en/ether/pair-explorer/" target="_blank">
+									<img class="me-1" src="images/dex.png">
+									chart
+								</a>
+                            <a class="social-link mx-4 my-1" href="https://twitter.com/" target="_blank">
+									<img class="me-1" src="images/twitter.png">
+									twitter
+								</a>
+                            <a class="social-link mx-4 my-1" href="https://medium.com/" target="_blank">
+									<img class="me-1" src="images/medium.png">
+									medium
+								</a>
+                        </div>
+
+                        <h3 id="contract" class="mt-3">
+                            0x_________________________________
+                        </h3>
+
+                        <div class="text-center mt-3 mt-2k-4">
+                            $MIGA is a crypto project that is based on the use on a meme to Make Inus Great Again, A Momment.
+                            <br/> Ethereum chain network. Join our pride.
+                            <br/> OK! $MIGA
+                            <br/><br/><br/>
+                            <!-- <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e272028210e3e3b22223b3e2b3a26602d2123">[email&#160;protected]</a> -->
+                            <div class="text-center">
+                                <a class="footer-link" href="#" target="_blank">
+									<!-- <img class="mt-4 mt-2k-5" src="images/footer-link.png"/> -->
+								</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="launch-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content d-flex flex-column align-items-center p-4 rounded-4">
+                    <img width="15%" src="images/clock.png" />
+                    <div class="mt-2">Launching soon</div>
+                </div>
+            </div>
+        </div>
+
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script>
+            let container = document.querySelector(".container-fluid");
+            container.addEventListener("animationend", changePosition, true);
+
+            function changePosition(event) {
+                let element = event.target;
+
+                element.style.animationName = "none";
+
+                requestAnimationFrame(() => {
+                    element.style.animationName = "";
+                });
+
+                let circleStyle = getComputedStyle(element);
+                let finalX = circleStyle.getPropertyValue("--xB");
+                let finalY = circleStyle.getPropertyValue("--yB");
+
+                element.style.setProperty("--xA", finalX);
+                element.style.setProperty("--yA", finalY);
+
+                element.style.setProperty("--xB", getRandomNumber(-5, 5) + "px");
+                element.style.setProperty("--yB", getRandomNumber(-20, 20) + "px");
+            }
+
+            function getRandomNumber(low, high) {
+                let r = Math.floor(Math.random() * (high - low + 1)) + low;
+                return r;
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+@font-face {
+    font-family: UBUNTU-REGULAR;
+    src: url("../fonts/UBUNTU-REGULAR.TTF");
+}
+
+@font-face {
+    font-family: UBUNTU-MEDIUM;
+    src: url("../fonts/UBUNTU-MEDIUM.TTF");
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: UBUNTU-REGULAR;
+    font-size: 2vh;
+    background-color: #000;
+    color: #585858;
+    height: 100%;
+    min-height: 100vh;
+}
+
+#contract {
+    font-size: calc(1vw + 1.2vh);
+}
+
+#main {
+    min-height: 100vh;
+    position: relative;
+}
+
+#launch-button {
+    font-family: UBUNTU-REGULAR;
+    font-size: 2vh;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.10);
+    color: #fff;
+    position: fixed;
+    top: 1.5rem;
+    right: 2%;
+    z-index: 5;
+    text-align: center;
+    text-decoration: none;
+}
+
+#launch-button:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transition: background-color 0.25s;
+}
+
+@media (max-width: 992px) {
+    #launch-button {
+        position: static;
+        margin-bottom: 1.5rem;
+    }
+}
+
+#launch-button img {
+    height: 2vh;
+}
+
+#launch-button span {
+    color: #555;
+    margin-top: -4px;
+}
+
+.social-link img {
+    height: 5vh;
+}
+
+.footer-link img {
+    height: 2.5vh;
+}
+
+.social-link {
+    font-family: UBUNTU-MEDIUM;
+    font-size: 3vh;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.social-link:hover {
+    background: -webkit-linear-gradient(#c32d5a, #cd450f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-link:focus {
+    background: -webkit-linear-gradient(#8f1f3d, #992f0a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-link {
+    transition: opacity 0.25s;
+    opacity: 0.3;
+}
+
+.footer-link:hover {
+    opacity: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translate3d(var(--xA), var(--yA), 0);
+    }
+    100% {
+        transform: translate3d(var(--xB), var(--yB), 0);
+    }
+}
+
+.animated {
+    position: absolute;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+#anim-1 {
+    top: 36%;
+    left: 4%;
+    --xA: 5px;
+    --yA: 10px;
+    --xB: -3px;
+    --yB: -10px;
+}
+
+#anim-2 {
+    bottom: 6%;
+    left: 9%;
+    --xA: -3px;
+    --yA: 0px;
+    --xB: 5px;
+    --yB: -10px;
+}
+
+#anim-3 {
+    top: 53%;
+    right: 1%;
+    --xA: 2px;
+    --yA: -10px;
+    --xB: -5px;
+    --yB: 10px;
+}
+
+#launch-modal .modal-content {
+    background: #000;
+    color: #fff;
+    font-size: 2vh;
+}
